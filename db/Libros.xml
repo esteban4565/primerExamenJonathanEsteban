@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodo_padre>
+    <nodo_libro>
+        <valor>Esteban</valor>
+        <valor>PHP su madre</valor>
+    </nodo_libro>
+    <nodo_libro>
+        <valor>Juan</valor>
+        <valor>Los Chiles</valor>
+    </nodo_libro>
+    <nodo_libro>
+        <valor>Jonathan</valor>
+        <valor>Los caminos de la vida</valor>
+        <valor>triste</valor>
+    </nodo_libro>
+    <nodo_libro>
+        <valor>Esteban</valor>
+        <valor>Bombas</valor>
+        <valor>5464654</valor>
+    </nodo_libro>
+    <nodo_libro>
+        <valor>ggg</valor>
+        <valor>ggg</valor>
+        <valor>ggg</valor>
+    </nodo_libro>
+</nodo_padre>

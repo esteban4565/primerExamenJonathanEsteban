@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodo_padre>
+    <nodo_hijo>
+        <valor>eqs</valor>
+        <valor>123</valor>
+    </nodo_hijo>
+    <nodo_hijo>
+        <valor>juan</valor>
+        <valor>456</valor>
+        <valor>juanito206@gmail.com</valor>
+        <valor>83432650</valor>
+        <valor>43456841153121</valor>
+        <valor>Carrizal</valor>
+    </nodo_hijo>
+    <nodo_hijo>
+        <valor>Jhon</valor>
+        <valor>123</valor>
+        <valor>jhon@gmail</valor>
+        <valor>83465465</valor>
+        <valor>6548749846513548</valor>
+        <valor>Heredia</valor>
+    </nodo_hijo>
+</nodo_padre>
