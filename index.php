@@ -78,6 +78,9 @@ if (isset($_REQUEST['accion'])) {
         case 5:
             $ins->guardarLibro();
             break;
+        case 6:
+            $ins->listarLibro();
+            break;
     }
 } else {
     $ins->viewForm("");

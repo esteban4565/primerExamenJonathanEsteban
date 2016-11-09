@@ -27,6 +27,23 @@ class Control {
         $this->insSmarty->GenDisplay('footer.tpl');
     }
 
+    function listarLibro() {
+        $listaLibros="Lista libros en la BD<br>";
+        $insModel = new model;
+        $datos = $insModel->abrirBdLibros();
+        for ($i = 0; $i < sizeof($datos); $i++) {
+            $elem = $datos[$i];
+            $listaLibros.=$elem["Autor"] . "<br>";
+            $listaLibros.=$elem["Titulo"] . "<br>";
+            $listaLibros.=$elem["Descripcion"] . "<br>";
+            $listaLibros.="<br><br>";
+        }
+        $this->insSmarty->CreateAssing("msg", $listaLibros);
+        $this->insSmarty->GenDisplay('header.tpl');
+        $this->insSmarty->GenDisplay('listaLibros.tpl');
+        $this->insSmarty->GenDisplay('footer.tpl');
+    }
+
     function viewForm($str) {
         $this->insSmarty->CreateAssing("msg", $str);
         $this->insSmarty->GenDisplay('header.tpl');

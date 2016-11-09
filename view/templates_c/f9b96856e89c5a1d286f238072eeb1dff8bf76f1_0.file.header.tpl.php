@@ -1,3 +1,26 @@
+<?php
+/* Smarty version 3.1.29, created on 2016-11-09 04:09:45
+  from "C:\XAMPP\htdocs\primerExamenJonathanEsteban\view\templates\header.tpl" */
+
+if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
+  'has_nocache_code' => false,
+  'version' => '3.1.29',
+  'unifunc' => 'content_58229379f05560_54440921',
+  'file_dependency' => 
+  array (
+    'f9b96856e89c5a1d286f238072eeb1dff8bf76f1' => 
+    array (
+      0 => 'C:\\XAMPP\\htdocs\\primerExamenJonathanEsteban\\view\\templates\\header.tpl',
+      1 => 1478660679,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_58229379f05560_54440921 ($_smarty_tpl) {
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -23,7 +46,8 @@
                     </ul>
                 </div> 
             </div> 
-            <script type="text/javascript">
+            <?php echo '<script'; ?>
+ type="text/javascript">
                 function Registrar() {
                     window.location.href = 'index.php?accion=2';
                 }
@@ -103,4 +127,6 @@
                             document.getElementById('error').innerHTML = 'Ingrese un Autor';
                         }
                     }
-            </script> 
+            <?php echo '</script'; ?>
+> <?php }
+}

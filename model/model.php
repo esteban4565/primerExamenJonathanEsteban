@@ -20,6 +20,25 @@ class model {
         return $resulset;
     }
 
+    function abrirBdLibros() {
+
+        $xml = simplexml_load_file("db/Libros.xml");
+        $data = "";
+        $resulset = "";
+        foreach ($xml->nodo_libro as $nodo) {
+
+            //echo $nodo->valor. " " . $nodo->valor[1];
+            $data["Autor"] = trim($nodo->valor);
+            $data["Titulo"] = trim($nodo->valor[1]);
+            $data["Descripcion"] = trim($nodo->valor[2]);
+            $resulset[] = $data;
+            $data = "";
+        }
+
+
+        return $resulset;
+    }
+
     function agregarNodo($datos) {
         $archivo = new SimpleXMLElement('db/Usuarios.xml', null, true);
         $nodo_hijo = $archivo->addChild("nodo_hijo");
