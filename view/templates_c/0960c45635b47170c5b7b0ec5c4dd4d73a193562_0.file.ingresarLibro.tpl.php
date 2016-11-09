@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-11-09 02:17:55
+/* Smarty version 3.1.29, created on 2016-11-09 05:05:57
   from "C:\xampp\htdocs\primerExamenJonathanEsteban\view\templates\ingresarLibro.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58227943853c87_35331962',
+  'unifunc' => 'content_5822a0a5c61a56_51858504',
   'file_dependency' => 
   array (
     '0960c45635b47170c5b7b0ec5c4dd4d73a193562' => 
     array (
       0 => 'C:\\xampp\\htdocs\\primerExamenJonathanEsteban\\view\\templates\\ingresarLibro.tpl',
-      1 => 1478654271,
+      1 => 1478664351,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58227943853c87_35331962 ($_smarty_tpl) {
+function content_5822a0a5c61a56_51858504 ($_smarty_tpl) {
 ?>
 <div class="center_content">
     <div class="left_content">
@@ -45,6 +45,10 @@ function content_58227943853c87_35331962 ($_smarty_tpl) {
                 <div class="form_row">
                     <label class="contact"><strong>Descripcion:</strong></label>
                     <input type="text" name="Descripcion" id="Descripcion" required>
+                </div>
+                <div class="form_row">
+                    <label class="contact"><strong>Caratula Libro:</strong></label>
+                    <input type="file" name="Caratula" id="Caratula" required>
                 </div>
                 <div class="form_row">
                     <button class="register" onclick="ingresarLibro();" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Agregar</button>

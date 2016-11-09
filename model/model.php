@@ -31,6 +31,7 @@ class model {
             $data["Autor"] = trim($nodo->valor);
             $data["Titulo"] = trim($nodo->valor[1]);
             $data["Descripcion"] = trim($nodo->valor[2]);
+            $data["Caratula"] = trim($nodo->valor[3]);
             $resulset[] = $data;
             $data = "";
         }
@@ -57,6 +58,7 @@ class model {
         $nodo_hijo->addChild('valor', $datos['Autor']);
         $nodo_hijo->addChild('valor', $datos['Titulo']);
         $nodo_hijo->addChild('valor', $datos['Descripcion']);
+        $nodo_hijo->addChild('valor', $datos['Caratula']);
         $archivo->asXml('db/Libros.xml');
     }
 

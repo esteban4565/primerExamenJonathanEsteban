@@ -24,6 +24,10 @@
                     <input type="text" name="Descripcion" id="Descripcion" required>
                 </div>
                 <div class="form_row">
+                    <label class="contact"><strong>Caratula Libro:</strong></label>
+                    <input type="file" name="Caratula" id="Caratula" required>
+                </div>
+                <div class="form_row">
                     <button class="register" onclick="ingresarLibro();" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Agregar</button>
                 </div>
             </form>

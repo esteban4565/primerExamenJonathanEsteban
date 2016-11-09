@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-11-08 23:47:41
+/* Smarty version 3.1.29, created on 2016-11-09 04:35:49
   from "C:\xampp\htdocs\primerExamenJonathanEsteban\view\templates\header.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5822560de3e3b7_42693278',
+  'unifunc' => 'content_58229995f1f2b4_09931845',
   'file_dependency' => 
   array (
     'c1e31bb503debdb3f371d33c268a1d2316742f90' => 
     array (
       0 => 'C:\\xampp\\htdocs\\primerExamenJonathanEsteban\\view\\templates\\header.tpl',
-      1 => 1478645258,
+      1 => 1478662482,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5822560de3e3b7_42693278 ($_smarty_tpl) {
+function content_58229995f1f2b4_09931845 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -39,7 +39,7 @@ function content_5822560de3e3b7_42693278 ($_smarty_tpl) {
                     <ul>                                                                       
                         <li class="selected"><a href="index.php">Inicio</a></li>
                         <li><a href="nosotros.php">sobre nosotros</a></li>
-                        <li><a href="libros.php">Libros</a></li>
+                        <li><a href="index.php?accion=6">Libros</a></li>
                         <li><a href="index.php?accion=4">Ingresar Libros</a></li>
                         <li><a href="index.php?accion=1">mi cuenta</a></li>
                         <li><a href="index.php?accion=2">Registrate</a></li>

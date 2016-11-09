@@ -28,17 +28,17 @@ class Control {
     }
 
     function listarLibro() {
-        $listaLibros="Lista libros en la BD<br>";
+        $listaLibros=array();
         $insModel = new model;
         $datos = $insModel->abrirBdLibros();
         for ($i = 0; $i < sizeof($datos); $i++) {
             $elem = $datos[$i];
-            $listaLibros.=$elem["Autor"] . "<br>";
-            $listaLibros.=$elem["Titulo"] . "<br>";
-            $listaLibros.=$elem["Descripcion"] . "<br>";
-            $listaLibros.="<br><br>";
+            $listaLibros[$i]['Autor']=$elem["Autor"];
+            $listaLibros[$i]['Titulo']=$elem["Titulo"];
+            $listaLibros[$i]['Descripcion']=$elem["Descripcion"];
+            $listaLibros[$i]['Caratula']=$elem["Caratula"];
         }
-        $this->insSmarty->CreateAssing("msg", $listaLibros);
+        $this->insSmarty->CreateAssing("listaLibros", $listaLibros);
         $this->insSmarty->GenDisplay('header.tpl');
         $this->insSmarty->GenDisplay('listaLibros.tpl');
         $this->insSmarty->GenDisplay('footer.tpl');
@@ -145,6 +145,11 @@ class Control {
                 $datos["Descripcion"] = $_REQUEST['Descripcion'];
             } else {
                 $datos["Descripcion"] ="";
+            }
+            if (isset($_REQUEST['Caratula'])) {
+                $datos["Caratula"] = $_REQUEST['Caratula'];
+            } else {
+                $datos["Caratula"] ="";
             }
             $insModel->agregarLibro($datos);
             $this->insSmarty->CreateAssing("msg", "Libro agregado correctamente!!!");

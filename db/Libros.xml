@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nodo_padre>
     <nodo_libro>
-        <valor>Esteban</valor>
-        <valor>PHP su madre</valor>
+        <valor>Pedro</valor>
+        <valor>Libro1</valor>
+        <valor>ejemplo</valor>
+        <valor>thumb2.gif</valor>
     </nodo_libro>
     <nodo_libro>
         <valor>Juan</valor>
-        <valor>Los Chiles</valor>
+        <valor>Libro2</valor>
+        <valor>Ejemplo</valor>
+        <valor>prod2.gif</valor>
     </nodo_libro>
     <nodo_libro>
-        <valor>Jonathan</valor>
-        <valor>Los caminos de la vida</valor>
-        <valor>triste</valor>
-    </nodo_libro>
-    <nodo_libro>
-        <valor>Esteban</valor>
-        <valor>Bombas</valor>
-        <valor>5464654</valor>
-    </nodo_libro>
-    <nodo_libro>
-        <valor>ggg</valor>
-        <valor>ggg</valor>
-        <valor>ggg</valor>
+        <valor>Moises</valor>
+        <valor>Libro3</valor>
+        <valor>Ejemplo</valor>
+        <valor>thumb3.gif</valor>
     </nodo_libro>
 </nodo_padre>

@@ -81,6 +81,10 @@ if (isset($_REQUEST['accion'])) {
         case 6:
             $ins->listarLibro();
             break;
+        case 7:
+            print_r($_REQUEST['NombreLibro']);
+            print_r($_REQUEST['Autor']);
+            break;
     }
 } else {
     $ins->viewForm("");
