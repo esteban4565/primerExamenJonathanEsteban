@@ -17,9 +17,15 @@
                         <li class="selected"><a href="index.php">Inicio</a></li>
                         <li><a href="nosotros.php">sobre nosotros</a></li>
                         <li><a href="index.php?accion=6">Libros</a></li>
+                        {if isset($smarty.session.estado) && $smarty.session.estado == 'true'} 
                         <li><a href="index.php?accion=4">Ingresar Libros</a></li>
-                        <li><a href="index.php?accion=1">mi cuenta</a></li>
+                        <li><a href="index.php?accion=9">{$smarty.session.Usuario} ¡Bienvenid@!</a></li>
+                        <li><a href="index.php?accion=8">Salir</a></li>
+                        {else}
+                        <li><a href="index.php?accion=1">Iniciar Sesión</a></li>
                         <li><a href="index.php?accion=2">Registrate</a></li>
+                        {/if}
+                        
                     </ul>
                 </div> 
             </div> 
@@ -95,6 +101,7 @@
                         var Titulo = document.getElementById('Titulo').value;
                         if (Autor != '') {
                             if (Titulo != '') {
+                                alert("Libro: " + Titulo + " / Autor: " + Autor + " agregado correctamente. Para ver libros agregados dirijase a Menu->Libros");
                                 document.forms["contact"].submit();
                             } else {
                                 document.getElementById('error').innerHTML = 'Ingrese un Titulo';

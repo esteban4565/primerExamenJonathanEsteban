@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-11-09 04:35:49
+/* Smarty version 3.1.29, created on 2016-11-14 05:24:38
   from "C:\xampp\htdocs\primerExamenJonathanEsteban\view\templates\header.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58229995f1f2b4_09931845',
+  'unifunc' => 'content_58293c864b4e27_66288042',
   'file_dependency' => 
   array (
     'c1e31bb503debdb3f371d33c268a1d2316742f90' => 
     array (
       0 => 'C:\\xampp\\htdocs\\primerExamenJonathanEsteban\\view\\templates\\header.tpl',
-      1 => 1478662482,
+      1 => 1479097471,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58229995f1f2b4_09931845 ($_smarty_tpl) {
+function content_58293c864b4e27_66288042 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -40,9 +40,16 @@ function content_58229995f1f2b4_09931845 ($_smarty_tpl) {
                         <li class="selected"><a href="index.php">Inicio</a></li>
                         <li><a href="nosotros.php">sobre nosotros</a></li>
                         <li><a href="index.php?accion=6">Libros</a></li>
+                        <?php if (isset($_SESSION['estado']) && $_SESSION['estado'] == 'true') {?> 
                         <li><a href="index.php?accion=4">Ingresar Libros</a></li>
-                        <li><a href="index.php?accion=1">mi cuenta</a></li>
+                        <li><a href="index.php?accion=9"><?php echo $_SESSION['Usuario'];?>
+ ¡Bienvenid@!</a></li>
+                        <li><a href="index.php?accion=8">Salir</a></li>
+                        <?php } else { ?>
+                        <li><a href="index.php?accion=1">Iniciar Sesión</a></li>
                         <li><a href="index.php?accion=2">Registrate</a></li>
+                        <?php }?>
+                        
                     </ul>
                 </div> 
             </div> 
@@ -119,6 +126,7 @@ function content_58229995f1f2b4_09931845 ($_smarty_tpl) {
                         var Titulo = document.getElementById('Titulo').value;
                         if (Autor != '') {
                             if (Titulo != '') {
+                                alert("Libro: " + Titulo + " / Autor: " + Autor + " agregado correctamente. Para ver libros agregados dirijase a Menu->Libros");
                                 document.forms["contact"].submit();
                             } else {
                                 document.getElementById('error').innerHTML = 'Ingrese un Titulo';

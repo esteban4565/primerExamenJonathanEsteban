@@ -1,23 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nodo_padre>
     <nodo_hijo>
+        <valor>0</valor>
         <valor>eqs</valor>
         <valor>123</valor>
-    </nodo_hijo>
-    <nodo_hijo>
-        <valor>juan</valor>
-        <valor>456</valor>
         <valor>juanito206@gmail.com</valor>
         <valor>83432650</valor>
         <valor>43456841153121</valor>
         <valor>Carrizal</valor>
     </nodo_hijo>
     <nodo_hijo>
-        <valor>Jhon</valor>
+        <valor>1</valor>
+        <valor>yuli</valor>
         <valor>123</valor>
-        <valor>jhon@gmail</valor>
-        <valor>83465465</valor>
-        <valor>6548749846513548</valor>
-        <valor>Heredia</valor>
+        <valor>yuli@gmail.com</valor>
+        <valor>83466167</valor>
+        <valor>45654456546546</valor>
+        <valor>Carrizal</valor>
+        <valor>visa</valor>
     </nodo_hijo>
-</nodo_padre>
+    <nodo_hijo>
+        <valor>2</valor>
+        <valor>fer</valor>
+        <valor>123</valor>
+        <valor>fer@gmail.com</valor>
+        <valor>756121354</valor>
+        <valor>45654456546546</valor>
+        <valor>Carrizal</valor>
+        <valor>mastercard</valor>
+    </nodo_hijo>
+    <nodo_hijo>
+        <valor>3</valor>
+        <valor>ana</valor>
+        <valor>123</valor>
+        <valor>ana@gmail.com</valor>
+        <valor>45654654654</valor>
+        <valor>789654123</valor>
+        <valor>Carrizal</valor>
+        <valor>mastercard</valor>
+    </nodo_hijo>
+<nodo_hijo><valor>4</valor><valor>jhon</valor><valor>123</valor><valor>jhon@gmail.com</valor><valor>456456</valor><valor>456789456</valor><valor>Carrizal</valor><valor>visa</valor><valor>2016-11-15</valor></nodo_hijo><nodo_hijo><valor>5</valor><valor>felix</valor><valor>123</valor><valor>felix@gmail.com</valor><valor>123456</valor><valor>123456789</valor><valor>Nandayure</valor><valor>mastercard</valor><valor>24-10-1982</valor></nodo_hijo></nodo_padre>

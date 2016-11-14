@@ -33,14 +33,25 @@
                     </div>
 
                     <div class="form_row">
-                        <label class="contact"><strong>Tarjeta de credito</strong></label>
+                        <label class="contact"><strong>Tipo de Tarjeta:</strong></label>
+                        <input type="radio" name="tipoTarjeta" value="visa" required> Visa<br>
+                        <input type="radio" name="tipoTarjeta" value="mastercard"> Mastercard<br>
+                    </div>  
+
+                    <div class="form_row">
+                        <label class="contact"><strong>Numero de tarjeta de credito</strong></label>
                         <input type="text" class="contact_input" name="TarjetaCredito" id="TarjetaCredito" required/>
+                    </div>  
+
+                    <div class="form_row">
+                        <label class="contact"><strong>Fecha de expiracion</strong></label>
+                        <input type="date" class="contact_input" name="fechaExpiracion" id="fechaExpiracion" required/>
                     </div>
 
                     <div class="form_row">
                         <label class="contact"><strong>Enviar a:</strong></label>
                         <input type="text" class="contact_input" name="Domicilio" id="Domicilio" required/>
-                    </div>                    
+                    </div>                  
 
                     <div class="form_row">
                         <div class="terms">

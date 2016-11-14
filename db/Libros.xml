@@ -1,21 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nodo_padre>
     <nodo_libro>
+        <valor>0</valor>
         <valor>Pedro</valor>
         <valor>Libro1</valor>
         <valor>ejemplo</valor>
         <valor>thumb2.gif</valor>
+        <valor>1000</valor>
     </nodo_libro>
     <nodo_libro>
+        <valor>1</valor>
         <valor>Juan</valor>
         <valor>Libro2</valor>
         <valor>Ejemplo</valor>
         <valor>prod2.gif</valor>
+        <valor>1000</valor>
     </nodo_libro>
     <nodo_libro>
+        <valor>2</valor>
         <valor>Moises</valor>
         <valor>Libro3</valor>
         <valor>Ejemplo</valor>
         <valor>thumb3.gif</valor>
+        <valor>1000</valor>
     </nodo_libro>
-</nodo_padre>
+    <nodo_libro>
+        <valor>3</valor>
+        <valor>Patrick</valor>
+        <valor>Libro4</valor>
+        <valor>Como caer mal</valor>
+        <valor>thumb1.gif</valor>
+        <valor>1500</valor>
+    </nodo_libro>
+<nodo_libro><valor>4</valor><valor>Juan</valor><valor>Titulo5</valor><valor>picha con juan</valor><valor>thumb2.gif</valor><valor>1500000</valor></nodo_libro><nodo_libro><valor>5</valor><valor>Quak</valor><valor>Titulo6</valor><valor>Titulo6</valor><valor>thumb1.gif</valor><valor>45</valor></nodo_libro></nodo_padre>

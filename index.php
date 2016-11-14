@@ -85,6 +85,12 @@ if (isset($_REQUEST['accion'])) {
             print_r($_REQUEST['NombreLibro']);
             print_r($_REQUEST['Autor']);
             break;
+        case 8:
+            $ins->cerrarSession();
+            break;
+        case 9:
+            $ins->miCuenta();
+            break;
     }
 } else {
     $ins->viewForm("");

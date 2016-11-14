@@ -24,6 +24,10 @@
                     <input type="text" name="Descripcion" id="Descripcion" required>
                 </div>
                 <div class="form_row">
+                    <label class="contact"><strong>Precio:</strong></label>
+                    <input type="number" name="Precio" id="Precio" required>
+                </div>
+                <div class="form_row">
                     <label class="contact"><strong>Caratula Libro:</strong></label>
                     <input type="file" name="Caratula" id="Caratula" required>
                 </div>

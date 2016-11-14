@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-11-09 00:13:44
+/* Smarty version 3.1.29, created on 2016-11-14 04:51:03
   from "C:\xampp\htdocs\primerExamenJonathanEsteban\view\templates\registrarse.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58225c28367328_89372411',
+  'unifunc' => 'content_582934a76698d1_76189349',
   'file_dependency' => 
   array (
     '5ed3a0993b078adb7829b37f143a5b06285203b5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\primerExamenJonathanEsteban\\view\\templates\\registrarse.tpl',
-      1 => 1478646821,
+      1 => 1479095447,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58225c28367328_89372411 ($_smarty_tpl) {
+function content_582934a76698d1_76189349 ($_smarty_tpl) {
 ?>
 <div class="center_content">
     <div class="left_content">
@@ -56,14 +56,25 @@ function content_58225c28367328_89372411 ($_smarty_tpl) {
                     </div>
 
                     <div class="form_row">
-                        <label class="contact"><strong>Tarjeta de credito</strong></label>
+                        <label class="contact"><strong>Tipo de Tarjeta:</strong></label>
+                        <input type="radio" name="tipoTarjeta" value="visa" required> Visa<br>
+                        <input type="radio" name="tipoTarjeta" value="mastercard"> Mastercard<br>
+                    </div>  
+
+                    <div class="form_row">
+                        <label class="contact"><strong>Numero de tarjeta de credito</strong></label>
                         <input type="text" class="contact_input" name="TarjetaCredito" id="TarjetaCredito" required/>
+                    </div>  
+
+                    <div class="form_row">
+                        <label class="contact"><strong>Fecha de expiracion</strong></label>
+                        <input type="date" class="contact_input" name="fechaExpiracion" id="fechaExpiracion" required/>
                     </div>
 
                     <div class="form_row">
                         <label class="contact"><strong>Enviar a:</strong></label>
                         <input type="text" class="contact_input" name="Domicilio" id="Domicilio" required/>
-                    </div>                    
+                    </div>                  
 
                     <div class="form_row">
                         <div class="terms">

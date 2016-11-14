@@ -7,6 +7,8 @@ class ConfigSmarty {
     function __construct() {
         $this->smarty = new Smarty();
         $this->IniPathSmarty();
+        session_start();
+                
     }
 
     function IniPathSmarty() {

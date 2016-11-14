@@ -15,35 +15,6 @@ class Control {
         $this->insSmarty = new ConfigSmarty();
     }
 
-    function inicioSesion() {
-        $this->insSmarty->GenDisplay('header.tpl');
-        $this->insSmarty->GenDisplay('inicioSesion.tpl');
-        $this->insSmarty->GenDisplay('footer.tpl');
-    }
-
-    function ingresarLibro() {
-        $this->insSmarty->GenDisplay('header.tpl');
-        $this->insSmarty->GenDisplay('ingresarLibro.tpl');
-        $this->insSmarty->GenDisplay('footer.tpl');
-    }
-
-    function listarLibro() {
-        $listaLibros=array();
-        $insModel = new model;
-        $datos = $insModel->abrirBdLibros();
-        for ($i = 0; $i < sizeof($datos); $i++) {
-            $elem = $datos[$i];
-            $listaLibros[$i]['Autor']=$elem["Autor"];
-            $listaLibros[$i]['Titulo']=$elem["Titulo"];
-            $listaLibros[$i]['Descripcion']=$elem["Descripcion"];
-            $listaLibros[$i]['Caratula']=$elem["Caratula"];
-        }
-        $this->insSmarty->CreateAssing("listaLibros", $listaLibros);
-        $this->insSmarty->GenDisplay('header.tpl');
-        $this->insSmarty->GenDisplay('listaLibros.tpl');
-        $this->insSmarty->GenDisplay('footer.tpl');
-    }
-
     function viewForm($str) {
         $this->insSmarty->CreateAssing("msg", $str);
         $this->insSmarty->GenDisplay('header.tpl');
@@ -73,32 +44,45 @@ class Control {
         $this->versionApp = $versionApp;
     }
 
-    function ValidarLogin() {
+    function inicioSesion() {
+        $this->insSmarty->GenDisplay('header.tpl');
+        $this->insSmarty->GenDisplay('inicioSesion.tpl');
+        $this->insSmarty->GenDisplay('footer.tpl');
+    }
+    
+    function cerrarSession() {
+        $_SESSION['estado'] = 'false';
+        session_destroy();
+        $this->insSmarty->CreateAssing("msg", "");
+        $this->insSmarty->GenDisplay('header.tpl');
+        $this->insSmarty->GenDisplay('index.tpl');
+        $this->insSmarty->GenDisplay('footer.tpl');
+    }
+
+    function miCuenta() {
+        $datosUsuario=array();
         $insModel = new model;
-        $datos = $insModel->fnOpenXml();
-        $Status = false;
+        $datos = $insModel->consultaDatosUsuario();
         for ($i = 0; $i < sizeof($datos); $i++) {
             $elem = $datos[$i];
-
-            if ($elem["User"] == $_REQUEST['Usuario'] && $elem["Pass"] == $_REQUEST['Password']) {
-                $Status = true;
-                //Session::init();
-                //Session::set('estado',true);
+            if ($elem["usr"] == $_SESSION['Usuario'] && $elem["pass"] == $_SESSION['Password']) {
+                $datosUsuario['id']=$elem["id"];
+                $datosUsuario['usr']=$elem["usr"];
+                $datosUsuario['pass']=$elem["pass"];
+                $datosUsuario['Email']=$elem["Email"];
+                $datosUsuario['Telefono']=$elem["Telefono"];
+                $datosUsuario['TarjetaCredito']=$elem["TarjetaCredito"];
+                $datosUsuario['Domicilio']=$elem["Domicilio"];
+                $datosUsuario['tipoTarjeta']=$elem["tipoTarjeta"];
+                $datosUsuario['fechaExpiracion']=$elem["fechaExpiracion"];
                 break;
             }
         }
-
-        if ($Status) {
-            $this->insSmarty->CreateAssing("msg", "Bienvenido!!!");
-            $this->insSmarty->GenDisplay('header.tpl');
-            $this->insSmarty->GenDisplay('index.tpl');
-            $this->insSmarty->GenDisplay('footer.tpl');
-        } else {
-            $this->insSmarty->CreateAssing("msg", "Usuario No encontrado!!!");
-            $this->insSmarty->GenDisplay('header.tpl');
-            $this->insSmarty->GenDisplay('index.tpl');
-            $this->insSmarty->GenDisplay('footer.tpl');
-        }
+        
+        $this->insSmarty->CreateAssing("datosUsuario", $datosUsuario);
+        $this->insSmarty->GenDisplay('header.tpl');
+        $this->insSmarty->GenDisplay('datosUsuario.tpl');
+        $this->insSmarty->GenDisplay('footer.tpl');
     }
 
     function ValidarNuevoUsr() {
@@ -126,7 +110,17 @@ class Control {
             } else {
                 $datos["Domicilio"] ="";
             }
-            $insModel->agregarNodo($datos);
+            if (isset($_REQUEST['tipoTarjeta'])) {
+                $datos["tipoTarjeta"] = $_REQUEST['tipoTarjeta'];
+            } else {
+                $datos["tipoTarjeta"] ="";
+            }
+            if (isset($_REQUEST['fechaExpiracion'])) {
+                $datos["fechaExpiracion"] = $_REQUEST['fechaExpiracion'];
+            } else {
+                $datos["fechaExpiracion"] ="";
+            }
+            $insModel->agregarUsuario($datos);
             $this->insSmarty->CreateAssing("msg", "Usuario Registrado correctamente!!!");
             $this->insSmarty->GenDisplay('header.tpl');
             $this->insSmarty->GenDisplay('index.tpl');
@@ -134,6 +128,60 @@ class Control {
         } else {
             echo 'error al insertar usuario';
         }
+    }
+
+    function ValidarLogin() {
+        $insModel = new model;
+        $datos = $insModel->consultaUsuarios();
+        $Status = false;
+        for ($i = 0; $i < sizeof($datos); $i++) {
+            $elem = $datos[$i];
+
+            if ($elem["usr"] == $_REQUEST['Usuario'] && $elem["pass"] == $_REQUEST['Password']) {
+                $Status = true;
+                $_SESSION['estado'] = 'true';
+                $_SESSION['Usuario'] = $elem["usr"];
+                $_SESSION['Password'] = $elem["pass"];
+                break;
+            }
+        }
+
+        if ($Status) {
+            $this->insSmarty->CreateAssing("msg", "Bienvenido!!!");
+            $this->insSmarty->GenDisplay('header.tpl');
+            $this->insSmarty->GenDisplay('index.tpl');
+            $this->insSmarty->GenDisplay('footer.tpl');
+        } else {
+            $this->insSmarty->CreateAssing("msg", "Usuario No encontrado!!!");
+            $this->insSmarty->GenDisplay('header.tpl');
+            $this->insSmarty->GenDisplay('index.tpl');
+            $this->insSmarty->GenDisplay('footer.tpl');
+        }
+    }
+
+    function ingresarLibro() {
+        $this->insSmarty->GenDisplay('header.tpl');
+        $this->insSmarty->GenDisplay('ingresarLibro.tpl');
+        $this->insSmarty->GenDisplay('footer.tpl');
+    }
+
+    function listarLibro() {
+        $listaLibros=array();
+        $insModel = new model;
+        $datos = $insModel->abrirBdLibros();
+        for ($i = 0; $i < sizeof($datos); $i++) {
+            $elem = $datos[$i];
+            $listaLibros[$i]['id']=$elem["id"];
+            $listaLibros[$i]['Autor']=$elem["Autor"];
+            $listaLibros[$i]['Titulo']=$elem["Titulo"];
+            $listaLibros[$i]['Descripcion']=$elem["Descripcion"];
+            $listaLibros[$i]['Caratula']=$elem["Caratula"];
+            $listaLibros[$i]['Precio']=$elem["Precio"];
+        }
+        $this->insSmarty->CreateAssing("listaLibros", $listaLibros);
+        $this->insSmarty->GenDisplay('header.tpl');
+        $this->insSmarty->GenDisplay('listaLibros.tpl');
+        $this->insSmarty->GenDisplay('footer.tpl');
     }
 
     function guardarLibro() {
@@ -150,6 +198,11 @@ class Control {
                 $datos["Caratula"] = $_REQUEST['Caratula'];
             } else {
                 $datos["Caratula"] ="";
+            }
+            if (isset($_REQUEST['Precio'])) {
+                $datos["Precio"] = $_REQUEST['Precio'];
+            } else {
+                $datos["Precio"] ="";
             }
             $insModel->agregarLibro($datos);
             $this->insSmarty->CreateAssing("msg", "Libro agregado correctamente!!!");
