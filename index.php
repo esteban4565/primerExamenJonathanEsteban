@@ -84,6 +84,7 @@ if (isset($_REQUEST['accion'])) {
         case 7:
             print_r($_REQUEST['NombreLibro']);
             print_r($_REQUEST['Autor']);
+            print_r($_SESSION['Usuario']);
             break;
         case 8:
             $ins->cerrarSession();

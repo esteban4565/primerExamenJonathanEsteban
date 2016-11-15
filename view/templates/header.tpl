@@ -17,15 +17,15 @@
                         <li class="selected"><a href="index.php">Inicio</a></li>
                         <li><a href="nosotros.php">sobre nosotros</a></li>
                         <li><a href="index.php?accion=6">Libros</a></li>
-                        {if isset($smarty.session.estado) && $smarty.session.estado == 'true'} 
-                        <li><a href="index.php?accion=4">Ingresar Libros</a></li>
-                        <li><a href="index.php?accion=9">{$smarty.session.Usuario} ¡Bienvenid@!</a></li>
-                        <li><a href="index.php?accion=8">Salir</a></li>
-                        {else}
-                        <li><a href="index.php?accion=1">Iniciar Sesión</a></li>
-                        <li><a href="index.php?accion=2">Registrate</a></li>
-                        {/if}
-                        
+                            {if isset($smarty.session.estado) && $smarty.session.estado == 'true'} 
+                            <li><a href="index.php?accion=4">Ingresar Libros</a></li>
+                            <li><a href="index.php?accion=9">{$smarty.session.Usuario} ¡Bienvenid@!</a></li>
+                            <li><a href="index.php?accion=8">Salir</a></li>
+                            {else}
+                            <li><a href="index.php?accion=1">Iniciar Sesión</a></li>
+                            <li><a href="index.php?accion=2">Registrate</a></li>
+                            {/if}
+
                     </ul>
                 </div> 
             </div> 
@@ -47,67 +47,72 @@
                     var Contador = 0;
                     for (var i = 0; i < Cadena.length; i++)
                         {
-                            var caracter = Cadena[i];
-                            if (caracter == "*" || caracter == "$") {
-                                Contador = Contador + 1;
+                                    var caracter = Cadena[i];
+                                    if (caracter == "*" || caracter == "$") {
+                                        Contador = Contador + 1;
+                                    }
+                                }
+                                if (Contador > 0) {
+                                    return true;
+                                } else {
+                                    return false;
+                                }
                             }
-                        }
-                        if (Contador > 0) {
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    }
 
-                    function Validar() {
+                            function Validar() {
 
-                        var usu = document.getElementById('Usuario').value;
-                        var pass = document.getElementById('Password').value;
+                                var usu = document.getElementById('Usuario').value;
+                                var pass = document.getElementById('Password').value;
 
-                        var puntoCo = ValPuntoCom(usu);
-                        var Caracesp = ValCaractEspec(pass);
+                                var puntoCo = ValPuntoCom(usu);
+                                var Caracesp = ValCaractEspec(pass);
 
-                        if (usu != '') {
-                            if (pass != '') {
-                                document.forms["contact"].submit();
-                            } else {
-                                document.getElementById('error').innerHTML = 'Ingrese un password';
+                                if (usu != '') {
+                                    if (pass != '') {
+                                        document.forms["contact"].submit();
+                                    } else {
+                                        document.getElementById('error').innerHTML = 'Ingrese un password';
+                                    }
+                                } else {
+                                    document.getElementById('error').innerHTML = 'Ingrese un usuario';
+                                }
                             }
-                        } else {
-                            document.getElementById('error').innerHTML = 'Ingrese un usuario';
-                        }
-                    }
 
-                    function ValidarRegistro() {
-                        var usu = document.getElementById('usuNuevo').value;
-                        var pass = document.getElementById('passNuevo').value;
+                            function ValidarRegistro() {
+                                var usu = document.getElementById('usuNuevo').value;
+                                var pass = document.getElementById('passNuevo').value;
 
-                        var puntoCo = ValPuntoCom(usu);
-                        var Caracesp = ValCaractEspec(pass);
+                                var puntoCo = ValPuntoCom(usu);
+                                var Caracesp = ValCaractEspec(pass);
 
-                        if (usu != '') {
-                            if (pass != '') {
-                                document.forms["contact"].submit();
-                            } else {
-                                document.getElementById('error').innerHTML = 'Ingrese un password';
+                                if (usu != '') {
+                                    if (pass != '') {
+                                        document.forms["contact"].submit();
+                                    } else {
+                                        document.getElementById('error').innerHTML = 'Ingrese un password';
+                                    }
+                                } else {
+                                    document.getElementById('error').innerHTML = 'Ingrese un usuario';
+                                }
                             }
-                        } else {
-                            document.getElementById('error').innerHTML = 'Ingrese un usuario';
-                        }
-                    }
 
-                    function ingresarLibro() {
-                        var Autor = document.getElementById('Autor').value;
-                        var Titulo = document.getElementById('Titulo').value;
-                        if (Autor != '') {
-                            if (Titulo != '') {
-                                alert("Libro: " + Titulo + " / Autor: " + Autor + " agregado correctamente. Para ver libros agregados dirijase a Menu->Libros");
-                                document.forms["contact"].submit();
-                            } else {
-                                document.getElementById('error').innerHTML = 'Ingrese un Titulo';
+                            function ingresarLibro() {
+                                var Autor = document.getElementById('Autor').value;
+                                var Titulo = document.getElementById('Titulo').value;
+                                var Descripcion = document.getElementById('Descripcion').value;
+                                var Precio = document.getElementById('Precio').value;
+                                var Caratula = document.getElementById('Caratula').value;
+                                if (Autor != '') {
+                                    if (Titulo != '') {
+                                        if (Descripcion != '' && Precio != '' && Caratula != '') {
+                                            alert("Libro: " + Titulo + " / Autor: " + Autor + " agregado correctamente. Para ver libros agregados dirijase a Menu->Libros");
+                                            document.forms["contact"].submit();
+                                        }
+                                    } else {
+                                        document.getElementById('error').innerHTML = 'Ingrese un Titulo';
+                                    }
+                                } else {
+                                    document.getElementById('error').innerHTML = 'Ingrese un Autor';
+                                }
                             }
-                        } else {
-                            document.getElementById('error').innerHTML = 'Ingrese un Autor';
-                        }
-                    }
             </script> 

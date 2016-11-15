@@ -39,4 +39,26 @@
         <valor>Carrizal</valor>
         <valor>mastercard</valor>
     </nodo_hijo>
-<nodo_hijo><valor>4</valor><valor>jhon</valor><valor>123</valor><valor>jhon@gmail.com</valor><valor>456456</valor><valor>456789456</valor><valor>Carrizal</valor><valor>visa</valor><valor>2016-11-15</valor></nodo_hijo><nodo_hijo><valor>5</valor><valor>felix</valor><valor>123</valor><valor>felix@gmail.com</valor><valor>123456</valor><valor>123456789</valor><valor>Nandayure</valor><valor>mastercard</valor><valor>24-10-1982</valor></nodo_hijo></nodo_padre>
+    <nodo_hijo>
+        <valor>4</valor>
+        <valor>jhon</valor>
+        <valor>123</valor>
+        <valor>jhon@gmail.com</valor>
+        <valor>456456</valor>
+        <valor>456789456</valor>
+        <valor>Carrizal</valor>
+        <valor>visa</valor>
+        <valor>2016-11-15</valor>
+    </nodo_hijo>
+    <nodo_hijo>
+        <valor>5</valor>
+        <valor>felix</valor>
+        <valor>123</valor>
+        <valor>felix@gmail.com</valor>
+        <valor>123456</valor>
+        <valor>123456789</valor>
+        <valor>Nandayure</valor>
+        <valor>mastercard</valor>
+        <valor>24-10-1982</valor>
+    </nodo_hijo>
+</nodo_padre>

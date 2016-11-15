@@ -32,4 +32,36 @@
         <valor>thumb1.gif</valor>
         <valor>1500</valor>
     </nodo_libro>
-<nodo_libro><valor>4</valor><valor>Juan</valor><valor>Titulo5</valor><valor>picha con juan</valor><valor>thumb2.gif</valor><valor>1500000</valor></nodo_libro><nodo_libro><valor>5</valor><valor>Quak</valor><valor>Titulo6</valor><valor>Titulo6</valor><valor>thumb1.gif</valor><valor>45</valor></nodo_libro></nodo_padre>
+    <nodo_libro>
+        <valor>4</valor>
+        <valor>Juan</valor>
+        <valor>Titulo5</valor>
+        <valor>picha con juan</valor>
+        <valor>thumb2.gif</valor>
+        <valor>1500000</valor>
+    </nodo_libro>
+    <nodo_libro>
+        <valor>5</valor>
+        <valor>Quak</valor>
+        <valor>Titulo6</valor>
+        <valor>Titulo6</valor>
+        <valor>thumb1.gif</valor>
+        <valor>45</valor>
+    </nodo_libro>
+    <nodo_libro>
+        <valor>6</valor>
+        <valor>Juan</valor>
+        <valor>Libro7</valor>
+        <valor>Libro7</valor>
+        <valor>thumb2.gif</valor>
+        <valor>1585</valor>
+    </nodo_libro>
+    <nodo_libro>
+        <valor>7</valor>
+        <valor>DDD</valor>
+        <valor>DDD</valor>
+        <valor>DDD</valor>
+        <valor>about.gif</valor>
+        <valor>1500</valor>
+    </nodo_libro>
+</nodo_padre>

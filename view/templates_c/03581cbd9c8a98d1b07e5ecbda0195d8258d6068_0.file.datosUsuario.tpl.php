@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-11-14 04:57:09
+/* Smarty version 3.1.29, created on 2016-11-15 03:13:18
   from "C:\xampp\htdocs\primerExamenJonathanEsteban\view\templates\datosUsuario.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_58293615cd5152_15380910',
+  'unifunc' => 'content_582a6f3e803138_02636995',
   'file_dependency' => 
   array (
     '03581cbd9c8a98d1b07e5ecbda0195d8258d6068' => 
     array (
       0 => 'C:\\xampp\\htdocs\\primerExamenJonathanEsteban\\view\\templates\\datosUsuario.tpl',
-      1 => 1479095706,
+      1 => 1479095930,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_58293615cd5152_15380910 ($_smarty_tpl) {
+function content_582a6f3e803138_02636995 ($_smarty_tpl) {
 ?>
 <div class="center_content">
     <div class="left_content">
@@ -44,7 +44,7 @@ function content_58293615cd5152_15380910 ($_smarty_tpl) {
             <label>Numero de tarjeta de credito:</label>
             <p><?php echo $_smarty_tpl->tpl_vars['datosUsuario']->value['TarjetaCredito'];?>
 </p>
-            <label>Fecha de expiración:</label>
+            <label>Fecha de expiracion:</label>
             <p><?php echo $_smarty_tpl->tpl_vars['datosUsuario']->value['fechaExpiracion'];?>
 </p>
             <label>Enviar a:</label>

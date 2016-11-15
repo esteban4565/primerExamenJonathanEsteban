@@ -166,18 +166,8 @@ class Control {
     }
 
     function listarLibro() {
-        $listaLibros=array();
         $insModel = new model;
-        $datos = $insModel->abrirBdLibros();
-        for ($i = 0; $i < sizeof($datos); $i++) {
-            $elem = $datos[$i];
-            $listaLibros[$i]['id']=$elem["id"];
-            $listaLibros[$i]['Autor']=$elem["Autor"];
-            $listaLibros[$i]['Titulo']=$elem["Titulo"];
-            $listaLibros[$i]['Descripcion']=$elem["Descripcion"];
-            $listaLibros[$i]['Caratula']=$elem["Caratula"];
-            $listaLibros[$i]['Precio']=$elem["Precio"];
-        }
+        $listaLibros = $insModel->abrirBdLibros();
         $this->insSmarty->CreateAssing("listaLibros", $listaLibros);
         $this->insSmarty->GenDisplay('header.tpl');
         $this->insSmarty->GenDisplay('listaLibros.tpl');
